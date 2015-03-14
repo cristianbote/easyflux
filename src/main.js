@@ -85,12 +85,18 @@
         _toUnmout: [],
 
         /**
-         * General listener method`
+         * General listener method
          * @param eventObj
          * @param callback
          * @param scope
          */
         listenTo: function(eventObj, callback, scope) {
+
+            // Grab the eventObj from context.events
+            if (typeof eventObj === 'string') {
+                eventObj = this.events[eventObj];
+            }
+
             eventObj.listen(callback, scope);
 
             this._toUnmout.push({
@@ -107,6 +113,12 @@
         trigger: function(eventObj) {
             var args = Array.prototype.slice.apply(arguments);
             args.shift();
+
+            // Grab the eventObj from context.events
+            if (typeof eventObj === 'string') {
+                eventObj = this.events[eventObj];
+            }
+
             eventObj.trigger.apply(eventObj, args);
         },
 
