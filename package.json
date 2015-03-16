@@ -1,10 +1,10 @@
 {
   "name": "easyflux",
   "version": "0.0.1",
-  "description": "Easy, straight to the point, uni-directional events",
+  "description": "Easy, straight to the point events",
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:botecristian/rcacheck.ro.git"
+    "url": "git@github.com:cristianbote/easyflux.git"
   },
   "keywords": [
     "react",
