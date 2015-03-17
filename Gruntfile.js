@@ -16,24 +16,19 @@ module.exports = function(grunt) {
                 }
             }
         },
-
         uglify: {
-
             options: {
                 banner: '<%= concat.dist.options.banner %>'
             },
-
             dist: {
                 files: {
                     'dist/<%= pkg.name %>-<%= pkg.version %>.min.js': ['<%= concat.dist.dest %>']
                 }
             }
         },
-
         clean: {
             src: ['dist/']
         },
-
         watch: {
             files: ['src/**/*', 'Gruntfile.js'],
             tasks: ['build']
@@ -44,7 +39,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-clean');
-
 
     grunt.registerTask('build', ['clean', 'concat:dist', 'uglify']);
 };
