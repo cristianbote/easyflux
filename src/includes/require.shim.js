@@ -1,7 +1,7 @@
 /**
  * Defines the register method for a generic, AMD and require modules definition
  */
-var register = function(moduleName, definition){
+var __register = function(moduleName, definition){
     "use strict";
 
     if (typeof exports !== 'undefined') {

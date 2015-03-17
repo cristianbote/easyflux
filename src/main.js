@@ -1,4 +1,4 @@
-register('Easyflux',
+__register('Easyflux',
     (function(window){
         "use strict";
 
