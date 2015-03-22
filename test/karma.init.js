@@ -4,17 +4,19 @@
 module.exports = function(config) {
   config.set({
     basePath: '..',
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['mocha', 'chai', 'sinon', 'sinon-chai'],
     files: [
       'src/**/*.js',
+      'test/globals/**/*.js',
       'test/**/*.spec.js'
     ],
     preprocessors: {
       'src/**/*.js': 'coverage'
     },
-    reporters: ['spec'],
+    reporters: ['spec', 'coverage'],
     coverageReporter: {
-      type: 'lcovonly'
+      type: 'html',
+      dir: 'test/coverage/'
     },
     port: 9876,
     colors: true,

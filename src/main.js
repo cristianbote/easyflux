@@ -39,7 +39,7 @@
                                 this.callbacks[i].callback.apply(this.callbacks[i].scope, args);
                             }
 
-                        }.bind(bundle[bucket[i]]),
+                        },
 
                         /**
                          * Listener method
@@ -52,7 +52,7 @@
                                 callback: callback,
                                 scope: scope
                             });
-                        }.bind(bundle[bucket[i]]),
+                        },
 
                         /**
                          * Remove listener for this event at this scope
@@ -66,7 +66,7 @@
                             }
 
                             this.callbacks.splice(i, 1);
-                        }.bind(bundle[bucket[i]])
+                        }
 
                     };
 

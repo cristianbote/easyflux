@@ -2,7 +2,7 @@
  * Easyflux with mixins for React.js
  * Another iteration over the super-complicated Facebook`s Flux flow
  * Version 0.0.1
- * Build at: 15-03-2015
+ * Build at: 22-03-2015
  */
 (function(window, moduleName){
     "use strict";
@@ -45,7 +45,7 @@
                                 this.callbacks[i].callback.apply(this.callbacks[i].scope, args);
                             }
 
-                        }.bind(bundle[bucket[i]]),
+                        },
 
                         /**
                          * Listener method
@@ -58,7 +58,7 @@
                                 callback: callback,
                                 scope: scope
                             });
-                        }.bind(bundle[bucket[i]]),
+                        },
 
                         /**
                          * Remove listener for this event at this scope
@@ -72,7 +72,7 @@
                             }
 
                             this.callbacks.splice(i, 1);
-                        }.bind(bundle[bucket[i]])
+                        }
 
                     };
 

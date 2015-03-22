@@ -1,16 +1,11 @@
 (function() {
     "use strict";
 
-    var Easyflux = window.Easyflux,
-        EasyfluxMixin = window.Easyflux.Mixin,
-        assert = chai.assert,
-        getDummyObject = function() {
-            var dummy = Object.create(EasyfluxMixin);
-            dummy.events = Easyflux(['change']);
-        };
+    var EasyfluxMixin = Easyflux.Mixin,
+        assert = chai.assert;
 
     // Mixin test suite
-    xdescribe('Mixin', function() {
+    describe('Mixin', function() {
 
         // Let's make sure we have proper type
         it('should have proper type', function() {
@@ -25,9 +20,8 @@
         });
 
         // Also the prototype has not changed
-        xit('should have change event', function() {
-            var dummy = getDummyObject();
-
+        it('should have event', function() {
+            var dummy = new InstanceWithMixin();
             assert.property(dummy, 'events');
         });
     });
