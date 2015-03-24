@@ -5,7 +5,10 @@ module.exports = function(grunt) {
 
         concat: {
             dist: {
-                src: ['src/**/*.js'],
+                src: [
+                    'src/includes/require.shim.js',
+                    'src/**/*.js'
+                ],
                 dest: 'dist/<%= pkg.name %>-<%= pkg.version %>.js',
                 options: {
                     banner: '/**\n' +
@@ -22,7 +25,8 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'dist/<%= pkg.name %>-<%= pkg.version %>.min.js': ['<%= concat.dist.dest %>']
+                    'dist/<%= pkg.name %>-<%= pkg.version %>.min.js': ['<%= concat.dist.dest %>'],
+                    'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
                 }
             }
         },
