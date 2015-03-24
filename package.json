@@ -11,6 +11,9 @@
     "flux",
     "easyflux"
   ],
+  "scripts": {
+    "test": "karma start test/karma.init.js --single-run"
+  },
   "author": "Cristian Bote",
   "license": "ISC",
   "devDependencies": {
