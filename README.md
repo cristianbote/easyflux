@@ -132,6 +132,29 @@ That line, though, it's a bit hard to write. Below, it's using the `Easyflux.Mix
     });
 ```
 
+## Proper scoping the events
+At some point you'll end up having difficulties between listening to children events, that are scoped to their own namespace and context. Take a look at the demo.
+You can pass to children an `events` object, with `'eventName': this._onEventName` defined keys. This will be triggered whenever the internal event is triggered inside
+that children. Pretty useful stuff!
+
+```javascript
+
+    // JSX
+    render: function() {
+        return <MySuperReusableComponent events={{ 'change': this._onChangeEvent, 'doesSomething': this._onDoesSomething }} />
+    }
+    
+    // JS
+    render: function() {
+        return React.createElement(MySuperReusableComponent, {
+            events: {
+                'change': this._onChangeEvent,
+                'doesSomething': this._onDoesSomething
+            }
+        });
+    }
+```
+
 ## Final thoughts
 This should be treated as a simple solution for multi-directional events.
 
