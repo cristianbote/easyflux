@@ -2,7 +2,7 @@
  * Easyflux with mixins for React.js
  * Another iteration over the super-complicated Facebook`s Flux flow
  * Version 0.0.1
- * Build at: 22-03-2015
+ * Build at: 24-03-2015
  */
 /**
  * Defines the register method for a generic, AMD and require modules definition
@@ -148,6 +148,10 @@ __register('Easyflux',
                 }
 
                 eventObj.trigger.apply(eventObj, args);
+
+                if (window.React && this.props.events && this.props.events[eventObj.NAME]) {
+                    this.props.events[eventObj.NAME].apply(eventObj, args);
+                }
             },
 
             /**
