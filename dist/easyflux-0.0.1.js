@@ -149,7 +149,7 @@ __register('Easyflux',
 
                 eventObj.trigger.apply(eventObj, args);
 
-                if (this.props.events && this.props.events[eventObj.NAME]) {
+                if (window.React && this.props.events && this.props.events[eventObj.NAME]) {
                     this.props.events[eventObj.NAME].apply(eventObj, args);
                 }
             },
