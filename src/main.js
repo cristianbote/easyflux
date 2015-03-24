@@ -40,7 +40,7 @@ __register('Easyflux',
                                     this.callbacks[i].callback.apply(this.callbacks[i].scope, args);
                                 }
 
-                            }.bind(bundle[bucket[i]]),
+                            },
 
                             /**
                              * Listener method
@@ -53,7 +53,7 @@ __register('Easyflux',
                                     callback: callback,
                                     scope: scope
                                 });
-                            }.bind(bundle[bucket[i]]),
+                            },
 
                             /**
                              * Remove listener for this event at this scope
@@ -67,7 +67,7 @@ __register('Easyflux',
                                 }
 
                                 this.callbacks.splice(i, 1);
-                            }.bind(bundle[bucket[i]])
+                            }
 
                         };
 
