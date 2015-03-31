@@ -1,7 +1,7 @@
 /**
  * Easyflux with mixins for React.js
  * Another iteration over the super-complicated Facebook`s Flux flow
- * Version 0.1.1
+ * Version 0.1.2
  * Build at: 01-04-2015
  */
 /**
