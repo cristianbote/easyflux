@@ -1,11 +1,17 @@
 {
   "name": "easyflux",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Easy, straight to the point events",
   "repository": {
     "type": "git",
     "url": "git@github.com:cristianbote/easyflux.git"
   },
+  "files": [
+    "index.js",
+    "dist/easyflux.min.js",
+    "README.md",
+    "LICENSE.md"
+  ],
   "keywords": [
     "react",
     "flux",
