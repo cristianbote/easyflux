@@ -122,7 +122,7 @@ __register('Easyflux',
 
                 eventObj.trigger.apply(eventObj, args);
 
-                if (window.React && this.props.events && this.props.events[eventObj.NAME]) {
+                if (window['React'] && this.props.events && this.props.events[eventObj.NAME]) {
                     this.props.events[eventObj.NAME].apply(eventObj, args);
                 }
             },
@@ -140,5 +140,5 @@ __register('Easyflux',
 
         return module;
 
-    }(window))
+    }(this['window'] || this))
 );
