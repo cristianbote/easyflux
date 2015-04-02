@@ -1,0 +1,23 @@
+{
+  "name": "easyflux",
+  "main": "dist/easyflux.min.js",
+  "version": "0.1.2",
+  "homepage": "https://github.com/cristianbote/easyflux",
+  "authors": [
+    "Cristian Bote <me@cristianbote.ro>"
+  ],
+  "description": "Easy, straight to the point events",
+  "keywords": [
+    "react",
+    "flux",
+    "easyflux"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
