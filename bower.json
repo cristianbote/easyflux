@@ -1,7 +1,7 @@
 {
   "name": "easyflux",
   "main": "dist/easyflux.min.js",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/cristianbote/easyflux",
   "authors": [
     "Cristian Bote <me@cristianbote.ro>"
