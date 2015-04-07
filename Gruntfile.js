@@ -5,11 +5,10 @@ module.exports = function(grunt) {
 
         concat: {
             dist: {
-                src: [
-                    'src/includes/require.shim.js',
-                    'src/**/*.js'
-                ],
-                dest: 'dist/<%= pkg.name %>-<%= pkg.version %>.js',
+                files: {
+                    'dist/<%= pkg.name %>.js': ['src/includes/require.shim.js', 'src/**/*.js'],
+                    'dist/<%= pkg.name %>-<%= pkg.version %>.js': ['src/includes/require.shim.js', 'src/**/*.js']
+                },
                 options: {
                     banner: '/**\n' +
                         ' * Easyflux with mixins for React.js\n' +
@@ -25,8 +24,8 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'dist/<%= pkg.name %>-<%= pkg.version %>.min.js': ['<%= concat.dist.dest %>'],
-                    'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+                    'dist/<%= pkg.name %>-<%= pkg.version %>.min.js': ['dist/<%= pkg.name %>.js'],
+                    'dist/<%= pkg.name %>.min.js': ['dist/<%= pkg.name %>.js']
                 }
             }
         },

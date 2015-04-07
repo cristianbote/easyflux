@@ -6,7 +6,7 @@ module.exports = function(config) {
     basePath: '..',
     frameworks: ['mocha', 'chai', 'sinon', 'sinon-chai'],
     files: [
-      'src/**/*.js',
+      'dist/easyflux.js',
       'test/globals/**/*.js',
       'test/**/*.spec.js'
     ],

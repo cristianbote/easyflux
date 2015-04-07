@@ -1,8 +1,8 @@
 /**
  * Easyflux with mixins for React.js
  * Another iteration over the super-complicated Facebook`s Flux flow
- * Version 0.1.3
- * Build at: 02-04-2015
+ * Version 0.1.4
+ * Build at: 07-04-2015
  */
 /**
  * Defines the register method for a generic, AMD and require modules definition
@@ -22,7 +22,7 @@ var __register = (function(window) {
                     return definition;
                 });
             } else {
-                this[moduleName] = definition;
+                window[moduleName] = definition;
             }
         }
     };
@@ -163,6 +163,36 @@ __register('Easyflux',
             componentWillUnmount: function() {
                 for (var i = 0; i < this._toUnmout.length; i++) {
                     this._toUnmout[i].eventObj.remove(this);
+                }
+            },
+
+            /**
+             * Takes care for shorthand event definition
+             * @override
+             */
+            componentWillMount: function() {
+                var events = this.events,
+                    callbacks = {},
+                    eventId, i = 0;
+
+                if (events.length) {
+                    this.events = module(this.events);
+                } else if (typeof events['length'] == 'undefined' && typeof events === 'object') {
+                    events = [];
+
+                    // Grab the eventIds and callbacks
+                    for (eventId in this.events) {
+                        events.push(eventId);
+                        callbacks[eventId] = this.events[eventId];
+                    }
+
+                    // Define the event bucket
+                    this.events = module(events);
+
+                    // Assign the callbacks to the events
+                    for (i = 0; i < events.length; i++) {
+                        this.listenTo(events[i], this[callbacks[events[i]]], this);
+                    }
                 }
             }
         };
