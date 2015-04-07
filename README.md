@@ -1,10 +1,12 @@
 ## Easyflux [![Build Status](https://travis-ci.org/cristianbote/easyflux.svg?branch=master)](https://travis-ci.org/cristianbote/easyflux)
 
 ## How to get it
-```npm install easyflux --save
+```
+npm install easyflux --save
 ```
 
-```bower install easyflux --save
+```
+bower install easyflux --save
 ```
 
 ## A bit of intro
