@@ -1,4 +1,13 @@
 ## Easyflux [![Build Status](https://travis-ci.org/cristianbote/easyflux.svg?branch=master)](https://travis-ci.org/cristianbote/easyflux)
+
+## How to get it
+```npm install easyflux --save
+```
+
+```bower install easyflux --save
+```
+
+## A bit of intro
 I'm well aware that at this point, the interwebs is full of solutions, for every particular issue, there is. Lately, React from Facebook emerged, and it brought a full spectrum of issues.
 First there's Flux. Hard to get, use and start going. Then there was Reflux, a nice clean way of using Flux principles. Still, in my mind, something was missing: easy to use events.
 

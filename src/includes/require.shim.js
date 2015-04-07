@@ -16,7 +16,7 @@ var __register = (function(window) {
                     return definition;
                 });
             } else {
-                this[moduleName] = definition;
+                window[moduleName] = definition;
             }
         }
     };

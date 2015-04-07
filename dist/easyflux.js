@@ -1,3 +1,32 @@
+/**
+ * Easyflux with mixins for React.js
+ * Another iteration over the super-complicated Facebook`s Flux flow
+ * Version 0.1.4
+ * Build at: 07-04-2015
+ */
+/**
+ * Defines the register method for a generic, AMD and require modules definition
+ */
+var __register = (function(window) {
+    return function(moduleName, definition){
+        "use strict";
+
+        if (typeof exports !== 'undefined') {
+            if (typeof module !== 'undefined' && module.exports) {
+                window.exports = module.exports = definition;
+            }
+            exports[moduleName] = definition;
+        } else {
+            if (typeof define !== 'undefined') {
+                define(moduleName, function() {
+                    return definition;
+                });
+            } else {
+                window[moduleName] = definition;
+            }
+        }
+    };
+}(this['window'] || this));
 __register('Easyflux',
     (function(window){
         "use strict";

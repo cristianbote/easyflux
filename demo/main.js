@@ -84,12 +84,13 @@
             for (var i in this.props.data) {
                 elements.push(React.createElement(Components.TodoItem, {
                     model: this.props.data[i],
-                    ref: i,
+                    ref: this.props.data[i].id,
                     events: {
                         'toggleCheck': this._onItemCheck,
                         'remove': this._onItemRemove
                     }
                 }));
+                console.log(i);
             }
 
             return elements;
@@ -137,7 +138,7 @@
         _onKeyUp: function(e) {
             if (e.keyCode === 13) {
                 Controller.events.addItem.trigger({
-                    id: 'item' + (Math.random() * Date.now()).toString(22).substr(0, 3),
+                    id: 'item' + (Math.random() * Date.now()).toString(22).substr(0, 5),
                     value: this.refs.itemInput.getDOMNode().value,
                     checked: false
                 });
@@ -175,10 +176,18 @@
         /**
          * Define the decoupled events, scoped just for this class
          */
-        events: Easyflux([
-            'toggleCheck',
-            'remove'
-        ]),
+        events: {
+            'toggleCheck': '_ccToggle',
+            'remove': '_ccRemove'
+        },
+
+        _ccToggle: function() {
+            console.debug('_ccToggle');
+        },
+
+        _ccRemove: function() {
+            console.debug('_ccRemove');
+        },
 
         /**
          * Change the data on the model and trigger the change event
